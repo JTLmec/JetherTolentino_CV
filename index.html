@@ -3,117 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Jether Mae Tolentino – CV</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  :root{--navy:#1a2a4a;--blue:#3a6bc8;--light-blue:#e8f0fb;--mid:#5a6a7a;--border:#e2e8f0;--bg:#f8fafc;--white:#fff;}
-  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#2d3748;line-height:1.6;font-size:15px;}
-
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:56px;}
-  .nav-name{font-weight:700;color:var(--navy);font-size:1rem;letter-spacing:.02em;}
-  .nav-links{display:flex;gap:1.5rem;}
-  .nav-links a{text-decoration:none;color:var(--mid);font-size:.85rem;font-weight:500;transition:color .2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--blue);}
-  .nav-dl{background:var(--navy);color:#fff;padding:.4rem 1rem;border-radius:20px;font-size:.8rem;font-weight:600;text-decoration:none;transition:background .2s;}
-  .nav-dl:hover{background:var(--blue);}
-
-  .hero{min-height:100vh;display:flex;align-items:center;padding:80px 2rem 4rem;max-width:1000px;margin:0 auto;}
-  .hero-inner{display:grid;grid-template-columns:1fr 260px;gap:3rem;align-items:center;width:100%;}
-  .hero-tag{display:inline-block;background:var(--light-blue);color:var(--blue);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;margin-bottom:1.2rem;}
-  .hero h1{font-size:2.8rem;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:.5rem;}
-  .hero h1 span{color:var(--blue);}
-  .hero-sub{font-size:.95rem;color:var(--mid);margin-bottom:1.5rem;max-width:480px;}
-  .hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
-  .badge{background:var(--light-blue);color:var(--navy);font-size:.78rem;font-weight:600;padding:.3rem .75rem;border-radius:20px;}
-  .hero-ctas{display:flex;gap:1rem;}
-  .btn-primary{background:var(--navy);color:#fff;padding:.65rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:background .2s;}
-  .btn-primary:hover{background:var(--blue);}
-  .btn-secondary{border:2px solid var(--navy);color:var(--navy);padding:.65rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;}
-  .btn-secondary:hover{background:var(--navy);color:#fff;}
-  .hero-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(0,0,0,.06);}
-  .hero-card h3{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mid);margin-bottom:1rem;}
-  .stat{margin-bottom:.9rem;}
-  .stat-label{font-size:.78rem;color:var(--mid);margin-bottom:.3rem;}
-  .stat-bar{height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
-  .stat-fill{height:100%;background:var(--blue);border-radius:3px;transition:width 1.2s ease;}
-  .stat-num{font-size:.75rem;color:var(--blue);font-weight:700;margin-top:.2rem;}
-
-  section{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
-  .section-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:700;margin-bottom:.5rem;}
-  .section-title{font-size:1.9rem;font-weight:800;color:var(--navy);margin-bottom:.75rem;}
-  .section-sub{color:var(--mid);max-width:560px;margin-bottom:2.5rem;font-size:.9rem;}
-  .divider{border:none;border-top:1px solid var(--border);margin-bottom:2.5rem;}
-
-  .timeline{position:relative;}
-  .timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:0;width:2px;background:var(--border);}
-  .tl-item{display:grid;grid-template-columns:16px 1fr;gap:1.2rem;margin-bottom:2.4rem;position:relative;}
-  .tl-dot{width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--blue);margin-top:3px;flex-shrink:0;z-index:1;}
-  .tl-company{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:700;}
-  .tl-role{font-size:1.05rem;font-weight:700;color:var(--navy);margin:.15rem 0;}
-  .tl-date{font-size:.78rem;color:var(--mid);margin-bottom:.6rem;}
-  .tl-projects{font-size:.75rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
-  .tl-points{list-style:none;}
-  .tl-points li{font-size:.855rem;color:#4a5568;padding:.2rem 0 .2rem 1rem;position:relative;}
-  .tl-points li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:.75rem;top:.22rem;}
-
-  .skills-wrap{max-width:1000px;margin:0 auto;}
-  .skills-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;}
-  .skill-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.2rem;transition:box-shadow .2s,transform .2s;}
-  .skill-card:hover{box-shadow:0 6px 20px rgba(58,107,200,.12);transform:translateY(-2px);}
-  .skill-icon{font-size:1.3rem;margin-bottom:.4rem;}
-  .skill-name{font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:.4rem;}
-  .skill-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem;}
-  .skill-tag{font-size:.7rem;background:var(--light-blue);color:var(--blue);padding:.15rem .5rem;border-radius:10px;font-weight:600;}
-
-  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
-  .proj-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:box-shadow .2s,transform .2s;}
-  .proj-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-3px);}
-  .proj-client{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:700;margin-bottom:.4rem;}
-  .proj-name{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;}
-  .proj-desc{font-size:.84rem;color:var(--mid);margin-bottom:.9rem;}
-  .proj-chips{display:flex;flex-wrap:wrap;gap:.3rem;}
-  .chip{font-size:.7rem;background:#f1f5f9;color:#475569;padding:.2rem .55rem;border-radius:8px;font-weight:500;}
-
-  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;}
-  .cert-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.2rem;display:flex;gap:.9rem;align-items:flex-start;}
-  .cert-icon{font-size:1.3rem;flex-shrink:0;}
-  .cert-name{font-weight:700;color:var(--navy);font-size:.85rem;}
-  .cert-body{font-size:.78rem;color:var(--mid);margin-top:.2rem;}
-
-  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-  .edu-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.4rem;}
-  .edu-degree{font-weight:700;color:var(--navy);font-size:.95rem;}
-  .edu-school{color:var(--blue);font-size:.85rem;font-weight:600;margin:.2rem 0;}
-  .edu-year{font-size:.78rem;color:var(--mid);}
-  .edu-note{font-size:.8rem;color:var(--mid);margin-top:.4rem;}
-
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-  .contact-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.2rem;display:flex;align-items:center;gap:.9rem;}
-  .contact-icon{font-size:1.2rem;width:40px;height:40px;background:var(--light-blue);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .contact-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);font-weight:700;}
-  .contact-val{font-size:.88rem;color:var(--navy);font-weight:600;}
-  .contact-val a{color:var(--navy);text-decoration:none;}
-  .contact-val a:hover{color:var(--blue);}
-
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-  .reveal.visible{opacity:1;transform:none;}
-
-  .alt-bg{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-  .alt-bg-inner{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
-
-  @media(max-width:700px){
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-card{display:none;}
-    .hero h1{font-size:2rem;}
-    .edu-grid,.contact-grid,.skills-cols{grid-template-columns:1fr;}
-    .nav-links{display:none;}
-  }
-</style>
+<title>Jether Mae Tolentino-Latag – CV</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <nav>
-  <span class="nav-name">Jether Mae Tolentino</span>
+  <span class="nav-name">Jether Mae Tolentino-Latag</span>
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -121,57 +17,49 @@
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </div>
-  <a class="nav-dl" href="#">↓ Download CV</a>
+  <a class="nav-dl" href="resume.pdf" download>↓ Download PDF</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div>
-      <span class="hero-tag">Licensed Mechanical Engineer · PRC# 0087369</span>
-      <h1>Jether Mae<br/><span>Tolentino</span></h1>
-      <p class="hero-sub">Dynamic professional with 10+ years of experience in project management, digital coordination, and Mechanical Engineering. Skilled in Python, Power BI, BIM software, and automation tools. Currently pursuing a Diploma in Computer Science.</p>
+      <span class="hero-tag">Digital Engineering Team Lead</span>
+      <h1>Jether Mae<br/><span>Tolentino-Latag</span></h1>
+      <p class="hero-sub">Data-focused digital engineering leader with 10+ years of experience driving data validation, digital twin delivery, and BIM-enabled project deployment for enterprise infrastructure, supported by Lean Six Sigma Yellow Belt practice.</p>
       <div class="hero-badges">
-        <span class="badge">Digital Twin</span>
-        <span class="badge">BIM Coordination</span>
+        <span class="badge">Data Validation</span>
         <span class="badge">Project Management</span>
-        <span class="badge">Python · SQL</span>
-        <span class="badge">Power BI</span>
-        <span class="badge">Workflow Automation</span>
-        <span class="badge">ISO 19650</span>
-        <span class="badge">Lean Six Sigma</span>
+        <span class="badge">Digital Engineering</span>
+        <span class="badge">BIM & Digital Twin</span>
+        <span class="badge">Data Systems</span>
       </div>
       <div class="hero-ctas">
         <a class="btn-primary" href="#experience">View Experience</a>
-        <a class="btn-secondary" href="#contact">Get in Touch</a>
+        <a class="btn-secondary" href="#contact">Contact</a>
       </div>
     </div>
     <div class="hero-card">
       <h3>Core Proficiencies</h3>
       <div class="stat">
         <div class="stat-label">Digital Twin / BIM</div>
-        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="97%"></div></div>
+        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="95%"></div></div>
         <div class="stat-num">10+ yrs</div>
       </div>
       <div class="stat">
-        <div class="stat-label">Project Management</div>
-        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="92%"></div></div>
+        <div class="stat-label">Deployment & Data Systems</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="90%"></div></div>
         <div class="stat-num">8+ yrs</div>
       </div>
       <div class="stat">
-        <div class="stat-label">Python / Automation</div>
-        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="82%"></div></div>
+        <div class="stat-label">Automation & Reporting</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="85%"></div></div>
+        <div class="stat-num">7+ yrs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Software & Cloud</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="75%"></div></div>
         <div class="stat-num">5+ yrs</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Power BI / Data</div>
-        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="78%"></div></div>
-        <div class="stat-num">4+ yrs</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Computer Science (CS)</div>
-        <div class="stat-bar"><div class="stat-fill" style="width:0%" data-w="50%"></div></div>
-        <div class="stat-num">In progress</div>
       </div>
     </div>
   </div>
@@ -182,315 +70,193 @@
   <div class="reveal">
     <div class="section-label">Career History</div>
     <div class="section-title">Work Experience</div>
-    <p class="section-sub">10+ years across digital engineering, BIM coordination, mechanical design, and deployment leadership on global infrastructure projects.</p>
+    <p class="section-sub">10+ years leading digital engineering, deployment, and data delivery for large-scale infrastructure and enterprise clients.</p>
   </div>
   <hr class="divider"/>
   <div class="timeline reveal">
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
-        <div class="tl-company">Current Role</div>
+        <div class="tl-company">Willow</div>
         <div class="tl-role">Deployment and Activations Team Lead</div>
-        <div class="tl-date">March 2025 – Present</div>
-        <div class="tl-projects">Projects: Walmart · UCF · UTSW · Columbus State · DFW</div>
+        <div class="tl-date">2025 – Present</div>
         <ul class="tl-points">
-          <li>Lead 5+ concurrent U.S.-based projects, ensuring timely and high-quality delivery</li>
-          <li>Oversee deployment, activation, and data onboarding workflows for digital building platforms</li>
-          <li>Coordinate with cross-functional teams and stakeholders across multiple time zones</li>
-          <li>Manage resource allocation, team capacity planning, and workflow standardisation</li>
-          <li>Monitor risks, delivery metrics, and project performance</li>
-          <li>Support data validation and diagnostics processes</li>
+          <li>Lead digital twin deployments for Walmart, UTSW, DFW Airport, UCF, and Columbus State University.</li>
+          <li>Manage a cross-functional team of 6 and deliver end-to-end onboarding, validation, and platform activation.</li>
+          <li>Built automated room-location mapping and SharePoint-to-Azure DevOps reporting pipelines, removing manual reporting work.</li>
+          <li>Engineered an interactive week-ending dashboard aggregating live ADO and SharePoint data for portfolio-level insights.</li>
+          <li>Deployed AI-assisted operational workflows with Claude and OpenAI Codex for stakeholder-ready narrative generation.</li>
         </ul>
       </div>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
-        <div class="tl-company">Previous Role</div>
+        <div class="tl-company">Willow</div>
         <div class="tl-role">Senior Deployment and Activation Coordinator</div>
-        <div class="tl-date">March 2024 – March 2025</div>
-        <div class="tl-projects">Projects: Walmart · University of Central Florida</div>
+        <div class="tl-date">2024 – 2025</div>
         <ul class="tl-points">
-          <li>Led the Static Data Manila Team for Walmart, overseeing a team of 6 members</li>
-          <li>Conducted weekly status report meetings; adapted Agile Project Management practices</li>
-          <li>Developed and implemented project management tools and workflows to streamline operations</li>
-          <li>Provided contributions for Live data scope — enabling Live Energy Efficiency and Occupancy dashboards</li>
-          <li>Created and maintained Record Document Dashboard and Contractor Inputs Dashboard (Power BI)</li>
-          <li>Performed BMS data onboarding (UCF) — extracting and structuring static asset data from engineering documents</li>
+          <li>Led a 2–6 person team across concurrent enterprise deployments, managing Azure DevOps sprint delivery and resource planning.</li>
+          <li>Onboarded thousands of assets across MEPH, AV/IT, BMS, and security systems into Willow’s digital twin platform.</li>
+          <li>Implemented QA/QC automation and STP validation to reduce post-go-live remediation across active deployments.</li>
         </ul>
       </div>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
-        <div class="tl-company">Previous Role</div>
+        <div class="tl-company">Willow</div>
         <div class="tl-role">Senior Digital Coordinator</div>
-        <div class="tl-date">July 2022 – March 2024</div>
-        <div class="tl-projects">Projects: Walmart · 2MW Brookfield Tower</div>
+        <div class="tl-date">2022 – 2024</div>
         <ul class="tl-points">
-          <li>Managed digital twin projects for Spatial and Static Data Management as lead and assistant lead</li>
-          <li>Scheduled Static data activities across multiple asset data management projects</li>
-          <li>Provided training and guidance to Manila DE Team members on standard asset data management workflows</li>
-          <li>Data extraction from various data sources using Python</li>
-          <li>Conducted thorough gap analyses for asset data references; communicated findings to stakeholders</li>
-          <li>QAQC — performed quality checks on asset data activities including automated workflow outputs</li>
-          <li>Collaborated with automation team using GitHub, Airflow, and Docker to optimise repetitive processes</li>
-          <li>Managed data sources used in the Power BI dashboard of the project</li>
+          <li>Developed Python-based ETL pipelines for extracting engineering data from Revit models and contractor documents.</li>
+          <li>Created structured loadsheets and validated integrated datasets for BMS and asset management systems.</li>
+          <li>Built Power BI dashboards for executive reporting and collaborated with software teams on data requirements.</li>
         </ul>
       </div>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
         <div class="tl-company">Willow</div>
         <div class="tl-role">Digital Coordinator</div>
-        <div class="tl-date">May 2021 – July 2022</div>
-        <div class="tl-projects">Project: Walmart</div>
+        <div class="tl-date">2021 – 2022</div>
         <ul class="tl-points">
-          <li>Federation of project models using BIM software — Navisworks, Autodesk ReCap, Cloudcompare, AutoCAD</li>
-          <li>Conducted model audits in compliance with the BEP of the project</li>
-          <li>Generated clash-detection reports and points-of-connection reports to relevant parties</li>
-          <li>Contributed to development of the project's digital engineering workflows and documentation</li>
-          <li>Conducted and participated in weekly coordination meetings with digital project managers</li>
+          <li>Performed BIM federation and coordination using Navisworks, AutoCAD, and Revit on multidisciplinary projects.</li>
+          <li>Conducted model audits, clash detection, and ISO 19650 information management compliance reviews.</li>
+          <li>Translated raw engineering data into platform-ready asset records for digital twin onboarding.</li>
         </ul>
       </div>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
         <div class="tl-company">Fluor Corporation</div>
-        <div class="tl-role">Mechanical Data Specialist</div>
-        <div class="tl-date">September 2019 – April 2021</div>
-        <div class="tl-projects">Project: LNG-Canada (Shell)</div>
+        <div class="tl-role">Mechanical Data Specialist / Data Validation / Data Steward</div>
+        <div class="tl-date">2019 – 2021</div>
         <ul class="tl-points">
-          <li>Accountable for addressing client rejections of mechanical tag data</li>
-          <li>Generated tags using the project's tag database management system and managed load file templates</li>
-          <li>Organised coordination meetings with mechanical vendors about asset load file inputs</li>
-          <li>Verified vendor compliance with the project's Information Management Specification</li>
-          <li>Estimated materials for procurement and produced BOM reports using Matman</li>
+          <li>Managed engineering data workflows in Oracle Aconex for large-scale EPC projects.</li>
+          <li>Resolved validation issues, enforced vendor compliance, and maintained structured asset records.</li>
+          <li>Owned SAP BOM data for mechanical equipment across design-to-procurement lifecycle.</li>
         </ul>
       </div>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-body">
-        <div class="tl-company">Fluor Corporation</div>
-        <div class="tl-role">Associate Mechanical Design Engineer</div>
-        <div class="tl-date">February 2018 – September 2019</div>
-        <div class="tl-projects">Project: LyondellBasell PO│TBA</div>
+        <div class="tl-company">Fluor Corporation / Arcadis</div>
+        <div class="tl-role">Associate Mechanical Design Engineer / Mechanical Engineer / Drafter</div>
+        <div class="tl-date">2015 – 2019</div>
         <ul class="tl-points">
-          <li>Updated and maintained Mechanical Equipment Models using Smart Plant tools (SP3D and SPR)</li>
-          <li>Examined, addressed, and coordinated clashes in equipment models with other disciplines</li>
-          <li>Designed and developed ladders, platforms, pipe guides, and pipe supports for static equipment</li>
-          <li>Reviewed vendor documents for ladders, platforms, pipe guides, and pipe supports</li>
-          <li>Provided training to new mechanical drafters on processes and workflows</li>
+          <li>Developed SP3D and SPR mechanical models, coordinated multidisciplinary design packages, and resolved engineering conflicts.</li>
+          <li>Designed HVAC systems, produced drawings, and trained junior staff on tools and workflows.</li>
+          <li>Supported EPC design delivery for petrochemical, chemical, LNG, and built-environment clients.</li>
         </ul>
       </div>
     </div>
-
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-body">
-        <div class="tl-company">Arcadis</div>
-        <div class="tl-role">Mechanical Engineer</div>
-        <div class="tl-date">February 2017 – January 2018</div>
-        <div class="tl-projects">Project: Dubai Hills Mall</div>
-        <ul class="tl-points">
-          <li>Designed HVAC system for tenant units as per project and discipline code</li>
-          <li>Laid out schematics for Ventilation and Chilled Water System of the building</li>
-          <li>Performed HVAC calculations: duct/pipe pressure drop, air balancing, chilled water, and equipment sizing</li>
-          <li>Planned and laid out risers, ducts, and pipes coordinating with MEPF disciplines</li>
-          <li>Prepared HVAC L.O.D. (Lease Outline Drawing) for Dubai Hills Mall tenant units</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-body">
-        <div class="tl-company">Fluor Corporation</div>
-        <div class="tl-role">Mechanical Drafter</div>
-        <div class="tl-date">March 2015 – September 2016</div>
-        <div class="tl-projects">Project: Sasol Ziegler</div>
-        <ul class="tl-points">
-          <li>Maintained and updated the Mechanical Equipment List</li>
-          <li>Designed ladders and platforms for vertical and horizontal pressure vessels using AutoCAD</li>
-          <li>Updated and managed Mechanical Equipment Models using Smart Plant tools (SP3D and SPR)</li>
-          <li>Participated in client model reviews and resolution of clashes in the SP3D environment</li>
-        </ul>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- SKILLS -->
-<div class="alt-bg" id="skills">
-<div class="alt-bg-inner">
+<section id="skills" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:5rem 2rem;">
+<div style="max-width:1000px;margin:0 auto;">
   <div class="reveal">
     <div class="section-label">Capabilities</div>
     <div class="section-title">Skills & Tools</div>
-    <p class="section-sub">A blend of engineering expertise, digital delivery leadership, data analysis, and growing software development skills.</p>
+    <p class="section-sub">A blend of digital engineering delivery, systems automation, and cloud-enabled data workflows.</p>
   </div>
   <hr class="divider"/>
-  <div class="skills-cols reveal">
+  <div class="skills-grid reveal">
     <div class="skill-card">
       <div class="skill-icon">🏗️</div>
-      <div class="skill-name">BIM & Digital Twin</div>
-      <div class="skill-tags"><span class="skill-tag">Revit</span><span class="skill-tag">Navisworks</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">SP3D</span><span class="skill-tag">SPR</span><span class="skill-tag">Bluebeam</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">📊</div>
-      <div class="skill-name">Data & Reporting</div>
-      <div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">MS Excel</span><span class="skill-tag">SQL</span><span class="skill-tag">Data Analysis</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🤖</div>
-      <div class="skill-name">Automation & DevOps</div>
-      <div class="skill-tags"><span class="skill-tag">Power Automate</span><span class="skill-tag">Airflow</span><span class="skill-tag">Docker</span><span class="skill-tag">GitHub</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">💻</div>
-      <div class="skill-name">Programming</div>
-      <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS/JS</span><span class="skill-tag">PHP</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🗂️</div>
-      <div class="skill-name">Project Management</div>
-      <div class="skill-tags"><span class="skill-tag">Agile</span><span class="skill-tag">Risk Management</span><span class="skill-tag">Workflow Optimisation</span><span class="skill-tag">Resource Planning</span></div>
+      <div class="skill-name">Digital Twin & BIM</div>
+      <div class="skill-tags"><span class="skill-tag">Digital Twin Deployment</span><span class="skill-tag">Revit</span><span class="skill-tag">Navisworks</span><span class="skill-tag">Clash Detection</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">⚙️</div>
-      <div class="skill-name">Mechanical Engineering</div>
-      <div class="skill-tags"><span class="skill-tag">HVAC Design</span><span class="skill-tag">MEP</span><span class="skill-tag">Equipment Sizing</span><span class="skill-tag">BOM</span></div>
+      <div class="skill-name">Project Management</div>
+      <div class="skill-tags"><span class="skill-tag">Azure DevOps</span><span class="skill-tag">Agile</span><span class="skill-tag">Stakeholder Mgmt</span><span class="skill-tag">Confluence</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-name">Data & Automation</div>
+      <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Power Automate</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">Software & Web</div>
+      <div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Cloud & Infrastructure</div>
+      <div class="skill-tags"><span class="skill-tag">AWS EC2</span><span class="skill-tag">Full Stack</span><span class="skill-tag">GitHub</span><span class="skill-tag">System Integration</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📂</div>
+      <div class="skill-name">Construction Platforms</div>
+      <div class="skill-tags"><span class="skill-tag">Aconex</span><span class="skill-tag">Procore</span><span class="skill-tag">ISO 19650</span><span class="skill-tag">Document Control</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🧠</div>
+      <div class="skill-name">AI & Automation</div>
+      <div class="skill-tags"><span class="skill-tag">Claude</span><span class="skill-tag">OpenAI Codex</span><span class="skill-tag">Copilot</span><span class="skill-tag">Prompt Engineering</span></div>
     </div>
   </div>
 </div>
-</div>
+</section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="reveal">
     <div class="section-label">Selected Work</div>
     <div class="section-title">Key Projects</div>
-    <p class="section-sub">Digital engineering and deployment work across major U.S. facilities, global infrastructure, and personal initiatives.</p>
+    <p class="section-sub">Enterprise client deployments, data systems integrations, and personal engineering tools.</p>
   </div>
   <hr class="divider"/>
   <div class="proj-grid reveal">
     <div class="proj-card">
-      <div class="proj-client">Retail · Enterprise</div>
-      <div class="proj-name">Walmart Digital Twin</div>
-      <div class="proj-desc">Led static data management, Power BI dashboards, and team coordination for one of the largest retail digital twin deployments in the U.S.</div>
-      <div class="proj-chips"><span class="chip">Digital Twin</span><span class="chip">Power BI</span><span class="chip">Data Onboarding</span><span class="chip">Agile</span></div>
+      <div class="proj-client">Enterprise</div>
+      <div class="proj-name">Willow Deployment Portfolio</div>
+      <div class="proj-desc">Led digital twin and deployment work for Walmart, UTSW, DFW Airport, UCF, Columbus State, NAU, Microsoft, and Brookfield.</div>
+      <div class="proj-chips"><span class="chip">Digital Twin</span><span class="chip">Deployment</span><span class="chip">Enterprise</span></div>
     </div>
     <div class="proj-card">
       <div class="proj-client">Higher Education</div>
-      <div class="proj-name">University of Central Florida</div>
-      <div class="proj-desc">BMS data onboarding — extracting and structuring static asset data from engineering documents for campus-wide digital twin activation.</div>
-      <div class="proj-chips"><span class="chip">BMS</span><span class="chip">Asset Data</span><span class="chip">BIM</span><span class="chip">Activation</span></div>
+      <div class="proj-name">Campus Portfolio Activation</div>
+      <div class="proj-desc">Delivered multi-site campus deployments with cross-functional asset onboarding and operational reporting.</div>
+      <div class="proj-chips"><span class="chip">Higher Ed</span><span class="chip">BIM</span><span class="chip">Activation</span></div>
     </div>
     <div class="proj-card">
-      <div class="proj-client">Healthcare</div>
-      <div class="proj-name">UT Southwestern Medical Center</div>
-      <div class="proj-desc">Deployment and activation lead integrating complex MEP asset data into the digital twin platform for a major medical campus.</div>
-      <div class="proj-chips"><span class="chip">MEP</span><span class="chip">Deployment</span><span class="chip">Healthcare</span></div>
+      <div class="proj-client">Aviation</div>
+      <div class="proj-name">DFW Airport Digital Twin</div>
+      <div class="proj-desc">Supported large-scale facility onboarding and asset data integration for airport infrastructure operations.</div>
+      <div class="proj-chips"><span class="chip">Airport</span><span class="chip">Asset Data</span><span class="chip">Integration</span></div>
     </div>
     <div class="proj-card">
-      <div class="proj-client">Higher Education</div>
-      <div class="proj-name">Columbus State</div>
-      <div class="proj-desc">End-to-end deployment and activation for Columbus State's facility management digital twin platform.</div>
-      <div class="proj-chips"><span class="chip">Deployment</span><span class="chip">FM</span><span class="chip">Activation</span></div>
+      <div class="proj-client">Personal</div>
+      <div class="proj-name">Carbon Footprint Tracker</div>
+      <div class="proj-desc">Designed and deployed a full stack web app on AWS EC2 for carbon emissions tracking with PHP, MySQL, and JavaScript.</div>
+      <div class="proj-chips"><span class="chip">Full Stack</span><span class="chip">AWS</span><span class="chip">PHP</span></div>
     </div>
     <div class="proj-card">
-      <div class="proj-client">Transportation</div>
-      <div class="proj-name">DFW Airport</div>
-      <div class="proj-desc">Digital twin data onboarding and deployment for Dallas/Fort Worth International Airport's facility management platform.</div>
-      <div class="proj-chips"><span class="chip">Airport</span><span class="chip">Digital Twin</span><span class="chip">Data</span></div>
+      <div class="proj-client">Personal</div>
+      <div class="proj-name">Personal Web Profile</div>
+      <div class="proj-desc">Built a responsive personal web profile using HTML, CSS, and JavaScript to showcase digital and professional work.</div>
+      <div class="proj-chips"><span class="chip">Frontend</span><span class="chip">Responsive</span><span class="chip">JavaScript</span></div>
     </div>
     <div class="proj-card">
-      <div class="proj-client">Oil & Gas · Shell</div>
-      <div class="proj-name">LNG-Canada</div>
-      <div class="proj-desc">Managed mechanical tag data and vendor compliance for Shell's LNG-Canada project, one of the world's largest LNG export facilities.</div>
-      <div class="proj-chips"><span class="chip">Information Mgmt</span><span class="chip">ISO 19650</span><span class="chip">Mechanical</span></div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-client">Commercial · Dubai</div>
-      <div class="proj-name">Dubai Hills Mall</div>
-      <div class="proj-desc">Full HVAC system design for tenant units including chilled water schematics, duct/pipe calculations, and LOD drawings.</div>
-      <div class="proj-chips"><span class="chip">HVAC</span><span class="chip">MEP</span><span class="chip">Mechanical Design</span></div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-client">Petrochemical · Fluor</div>
-      <div class="proj-name">LyondellBasell PO│TBA</div>
-      <div class="proj-desc">Mechanical equipment modelling and structural design (ladders, platforms, pipe supports) using SP3D and SPR.</div>
-      <div class="proj-chips"><span class="chip">SP3D</span><span class="chip">3D Modelling</span><span class="chip">Clash Detection</span></div>
+      <div class="proj-client">Infrastructure</div>
+      <div class="proj-name">EPC and Built Environment Delivery</div>
+      <div class="proj-desc">Supported engineering database and document control for Fluor and Arcadis projects including petrochemical, chemical, and retail environments.</div>
+      <div class="proj-chips"><span class="chip">EPC</span><span class="chip">Aconex</span><span class="chip">ISO 19650</span></div>
     </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<div class="alt-bg">
-<div class="alt-bg-inner" id="certifications">
-  <div class="reveal">
-    <div class="section-label">Credentials</div>
-    <div class="section-title">Certificates & Licences</div>
-  </div>
-  <hr class="divider"/>
-  <div class="certs-grid reveal">
-    <div class="cert-card">
-      <div class="cert-icon">🏛️</div>
-      <div>
-        <div class="cert-name">Registered Mechanical Engineer</div>
-        <div class="cert-body">PRC# 0087369 · Philippines</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">📋</div>
-      <div>
-        <div class="cert-name">Information Management Practitioner</div>
-        <div class="cert-body">ISO 19650 · Operam Academy</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">⚡</div>
-      <div>
-        <div class="cert-name">Certified Lean Six Sigma</div>
-        <div class="cert-body">Yellow Belt · MFOpex</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">📊</div>
-      <div>
-        <div class="cert-name">Power BI Training</div>
-        <div class="cert-body">Data visualisation & dashboard development</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🐍</div>
-      <div>
-        <div class="cert-name">Python · SQL Training</div>
-        <div class="cert-body">Data extraction, automation, and scripting</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🗂️</div>
-      <div>
-        <div class="cert-name">Agile Project Management</div>
-        <div class="cert-body">Agile methodology and delivery frameworks</div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:5rem 2rem;">
+<div style="max-width:1000px;margin:0 auto;">
   <div class="reveal">
     <div class="section-label">Academic Background</div>
     <div class="section-title">Education</div>
@@ -498,27 +264,27 @@
   <hr class="divider"/>
   <div class="edu-grid reveal">
     <div class="edu-card">
-      <div class="edu-degree">Diploma in Computer Science</div>
-      <div class="edu-school">University of the Philippines – Open University</div>
-      <div class="edu-year">September 2024 – Present</div>
-      <div class="edu-note">Expanding expertise in software development, algorithms, and systems design</div>
+      <div class="edu-degree">Graduate Diploma in Computer Science</div>
+      <div class="edu-school">University of the Philippines Open University</div>
+      <div class="edu-year">2024 – 2026</div>
+      <div class="edu-note">Completed coursework in algorithms, systems design, and software development.</div>
     </div>
     <div class="edu-card">
-      <div class="edu-degree">Bachelor of Science in Mechanical Engineering</div>
-      <div class="edu-school">Technological University of the Philippines, Manila</div>
-      <div class="edu-year">June 2009 – March 2014</div>
-      <div class="edu-note">Licensed Mechanical Engineer · PRC Board Passer</div>
+      <div class="edu-degree">B.Sc. Mechanical Engineering</div>
+      <div class="edu-school">Technological University of the Philippines – Manila</div>
+      <div class="edu-year">2009 – 2014</div>
+      <div class="edu-note">Registered Mechanical Engineer, PRC License #0087369.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CONTACT -->
-<div class="alt-bg" id="contact">
-<div class="alt-bg-inner">
+<section id="contact">
   <div class="reveal">
     <div class="section-label">Let's Connect</div>
     <div class="section-title">Get in Touch</div>
-    <p class="section-sub">Based in Pasay City, Philippines. Available for remote opportunities, particularly U.S.-based projects.</p>
+    <p class="section-sub">Based in Pasay City, Philippines. Open to remote opportunities for U.S. and global digital engineering projects.</p>
   </div>
   <hr class="divider"/>
   <div class="contact-grid reveal">
@@ -530,50 +296,92 @@
       </div>
     </div>
     <div class="contact-item">
-      <div class="contact-icon">📧</div>
+      <div class="contact-icon">📞</div>
       <div>
-        <div class="contact-label">Email</div>
-        <div class="contact-val"><a href="mailto:tolentinojethermae@gmail.com">tolentinojethermae@gmail.com</a></div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-val">+63 917 795 2026</div>
       </div>
     </div>
     <div class="contact-item">
-      <div class="contact-icon">📱</div>
+      <div class="contact-icon">✉️</div>
       <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-val"><a href="tel:+639177952026">+63 917 795 2026</a></div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val">tolentinojethermae@gmail.com</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🎓</div>
+      <div>
+        <div class="contact-label">License</div>
+        <div class="contact-val">Registered Mechanical Engineer, PRC #0087369</div>
       </div>
     </div>
     <div class="contact-item">
       <div class="contact-icon">🌐</div>
       <div>
-        <div class="contact-label">Languages</div>
-        <div class="contact-val">English · Filipino</div>
+        <div class="contact-label">Availability</div>
+        <div class="contact-val">Remote · U.S. & Global Projects</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🔗</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val"><a href="https://www.linkedin.com/in/jether-tolentino-07061992" target="_blank" rel="noopener">linkedin.com/in/jether-tolentino-07061992</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🐙</div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-val"><a href="https://github.com/JTLmec" target="_blank" rel="noopener">github.com/JTLmec</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🏅</div>
+      <div>
+        <div class="contact-label">Certifications</div>
+        <div class="contact-val">ISO 19650 · Lean Six Sigma Yellow Belt</div>
       </div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
 <footer style="text-align:center;padding:2rem;color:var(--mid);font-size:.8rem;border-top:1px solid var(--border);">
-  © 2026 Jether Mae Tolentino · Digital Engineering Specialist · Licensed Mechanical Engineer
+  © 2026 Jether Mae Tolentino-Latag · Built as interactive web CV
 </footer>
 
 <script>
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(e=>{e.forEach(r=>{if(r.isIntersecting)r.target.classList.add('visible');});},{threshold:.1});
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+  },{threshold:.12});
   reveals.forEach(r=>obs.observe(r));
 
+  // Animate bars when hero card visible
   const fills = document.querySelectorAll('.stat-fill');
-  const barObs = new IntersectionObserver(e=>{e.forEach(r=>{if(r.isIntersecting)fills.forEach(f=>f.style.width=f.dataset.w);});},{threshold:.3});
-  const hc = document.querySelector('.hero-card');
-  if(hc) barObs.observe(hc);
+  const barObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        fills.forEach(f=>{f.style.width=f.dataset.w;});
+      }
+    });
+  },{threshold:.3});
+  const heroCard = document.querySelector('.hero-card');
+  if(heroCard) barObs.observe(heroCard);
 
-  const sections = document.querySelectorAll('section[id], div[id]');
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll',()=>{
     let cur='';
-    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
-    navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+    sections.forEach(s=>{
+      if(window.scrollY>=s.offsetTop-80) cur=s.id;
+    });
+    navLinks.forEach(a=>{
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
   });
 </script>
 </body>
