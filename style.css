@@ -46,6 +46,10 @@ section{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
 .section-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:700;margin-bottom:.5rem;}
 .section-title{font-size:1.9rem;font-weight:800;color:var(--navy);margin-bottom:.75rem;}
 .section-sub{color:var(--mid);max-width:520px;margin-bottom:2.5rem;}
+.subsection-header{margin:2rem 0 1.25rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+.subsection-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:700;margin-bottom:.45rem;display:block;}
+.subsection-title{font-size:1.35rem;font-weight:800;color:var(--navy);margin-bottom:.45rem;}
+.subsection-summary{color:var(--mid);max-width:760px;margin-bottom:0;line-height:1.7;}
 .divider{border:none;border-top:1px solid var(--border);margin-bottom:2.5rem;}
 
 /* EXPERIENCE */
@@ -69,6 +73,22 @@ section{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
 .skill-name{font-weight:700;color:var(--navy);font-size:.9rem;margin-bottom:.3rem;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem;}
 .skill-tag{font-size:.7rem;background:var(--light-blue);color:var(--blue);padding:.15rem .5rem;border-radius:10px;font-weight:600;}
+.skill-grid{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;}
+.skill-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 12px 28px rgba(16,39,82,.07);}
+.skill-card-title{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1.4rem;}
+.skill-metrics{display:grid;gap:.9rem;}
+.metric-row{display:flex;justify-content:space-between;font-size:.9rem;color:var(--mid);font-weight:700;letter-spacing:.01em;}
+.metric-bar{background:var(--border);border-radius:999px;overflow:hidden;height:12px;}
+.metric-fill{height:100%;background:linear-gradient(90deg,var(--blue),#3f7dff);border-radius:999px;transition:width .4s ease;}
+.skill-badges{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
+.skill-badges .badge{font-size:.78rem;padding:.45rem .85rem;border-radius:999px;}
+
+@media(max-width:980px){
+  .skill-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:680px){
+  .skill-grid{grid-template-columns:1fr;}
+}
 
 /* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
@@ -105,4 +125,5 @@ section{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
   .hero h1{font-size:2rem;}
   .edu-grid,.contact-grid{grid-template-columns:1fr;}
   .nav-links{display:none;}
+  .skill-bars{grid-template-columns:1fr;}
 }
