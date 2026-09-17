@@ -194,7 +194,7 @@
         <div class="metric-row"><span>Power BI</span><span>75%</span></div>
         <div class="metric-bar"><div class="metric-fill" style="width:0%" data-w="75%"></div></div>
         <div class="metric-row"><span>Power Automate</span><span>70%</span></div>
-        <div class="metric-bar"><div class="metric-fill" style="width:0%" data-w="75%"></div></div>
+        <div class="metric-bar"><div class="metric-fill" style="width:0%" data-w="70%"></div></div>
         <div class="metric-row"><span>Azure DevOps</span><span>80%</span></div>
         <div class="metric-bar"><div class="metric-fill" style="width:0%" data-w="80%"></div></div>
         <div class="metric-row"><span>Confluence</span><span>75%</span></div>
@@ -455,6 +455,12 @@
       if(!res.ok) dl.style.display = 'none';
     }).catch(()=>{ dl.style.display = 'none'; });
   })();
+
+  // Fallback: ensure fills match data attributes on load (fixes visual mismatches)
+  document.addEventListener('DOMContentLoaded', ()=>{
+    statFills.forEach(f=>{f.style.width = f.dataset.w;});
+    metricFills.forEach(f=>{f.style.width = f.dataset.w;});
+  });
 </script>
 </body>
 </html>
